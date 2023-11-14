@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <!-- Scripts that allow you to use react, without installing it. -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Adding Babel to the project, so the browser can understand JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/jsx">
+    const app = document.getElementById("app")
+    const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+    
+    function Header({title}) {
+        console.log(title);
+        return (<h1>{title ? title : "Develop. Preview. Ship. 🚀"}</h1>)
+    }
+    function HomePage() {
+        return (
+            <div>
+                <Header title="Develop. Preview. Ship. 🚀" />
+                <ul>
+                    {names.map((name) => (
+                        <li>{name}</li>
+                        ))}
+                    </ul>
+                </div>
+                );
+            }
+            
+    ReactDOM.render(<HomePage />, app);
+    </script>
+
+</body>
+
+</html>
